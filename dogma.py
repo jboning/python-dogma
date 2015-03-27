@@ -497,5 +497,5 @@ def type_base_attribute(typ, attribute):
 @sig(typeid_t, c_uint)
 def get_nth_type_effect_with_attributes(typ, n):
     result = effectid_t()
-    libdogma.dogma_get_nth_type_effect_with_attributes(typ, n, byref(result))
+    chk(libdogma.dogma_get_nth_type_effect_with_attributes(typ, n, byref(result)))
     return result.value
